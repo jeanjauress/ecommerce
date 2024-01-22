@@ -89,7 +89,7 @@
     var index = 1;
     for (var x in panier){
       panierString += index;
-      panierString += document.getElementById("aa" + x).innerHTML + " Qte " + panier[x];
+      panierString += document.getElementById("aa" + x).innerHTML + " Qte " + panier[x] + "<br>";;
       index += 1;
     }
     $('[data-toggle="popover"]').popover();
