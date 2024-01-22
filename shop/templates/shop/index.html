@@ -84,14 +84,15 @@
   AfficherList(panier);
 
   function AfficherList(panier){
-    var panierString = "";
+    var panierString = " ";
     panierString += "<h5>Voici votre liste</h5>";
     var index = 1;
     for (var x in panier){
       panierString += index;
-      panierString += document.getElementById("aa" + x).innerHTML + " Qte " + panier[x] + "<br>";;
+      panierString += document.getElementById("aa" + x).innerHTML + " Qte :" + panier[x] + "<br>";;
       index += 1;
     }
+    panierString += "<a href='/checkout' class='btn btn-primary'>Checkout</a>";
     $('[data-toggle="popover"]').popover();
     document.getElementById('panier').setAttribute('data-content', panierString);
   }
