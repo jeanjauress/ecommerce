@@ -70,6 +70,7 @@
     var item_id = this.id.toString();
     console.log(item_id);
     if(panier[item_id] != undefined){
+      quantite = panier[item_id][0]
       panier[item_id] = panier[item_id] + 1;
     }else{
       panier[item_id] = 1;
