@@ -70,10 +70,12 @@
     var item_id = this.id.toString();
     console.log(item_id);
     if(panier[item_id] != undefined){
-      quantite = panier[item_id][0]
-      panier[item_id] = panier[item_id] + 1;
+      quantite = panier[item_id][0] + 1
+      panier[item_id][0] = quantite;
     }else{
-      panier[item_id] = 1;
+        quantite = 1;
+        nom = document.getElementById('aa'+item_id).innerHTML;
+        panier[item_id] = [quantite, nom];
     }
     console.log(panier);
     localStorage.setItem('panier', JSON.stringify(panier));
@@ -90,7 +92,7 @@
     var index = 1;
     for (var x in panier){
       panierString += index;
-      panierString += document.getElementById("aa" + x).innerHTML + " Qte :" + panier[x] + "<br>";;
+      panierString += document.getElementById("aa" + x).innerHTML + " Qte :" + panier[x][0] + "<br>";
       index += 1;
     }
     panierString += "<a href='/checkout' class='btn btn-primary'>Checkout</a>";
