@@ -35,4 +35,7 @@ class Commande(models.Model):
 
   class Meta:
     ordering = ['-date_commande']
+    
+  def __str__(self):
+    return self.nom
   

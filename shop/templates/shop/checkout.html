@@ -15,6 +15,7 @@
   <div class="col-md-12">
     <form method="POST">
       {% csrf_token %}
+      <input type="hidden" id="items" name="items">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Nom</label>
@@ -73,7 +74,7 @@
       </li>`;
     $(`#item-list`).append(itemString);
   }
-  
+  $(`#items`).val(JSON.stringify(panier));
 </script>
 
 {% endblock %}
